@@ -6,11 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 
-import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.wltea.analyzer.core.IKSegmenter;
 import org.wltea.analyzer.core.Lexeme;
-import org.wltea.analyzer.lucene.IKAnalyzer;
 
 public class test{
 	public static void main(String[] args) throws IOException {
@@ -30,7 +27,7 @@ public class test{
 	   //Dictionary.initial(DefaultConfig.getInstance());
 	   //Dictionary.getSingleton().addWords(list);
 	   
-	   IKAnalyzer analyzer = new IKAnalyzer(true);
+	 /*  IKAnalyzer analyzer = new IKAnalyzer(true);
 	   StringReader reader = new StringReader(news);
 	   TokenStream ts = analyzer.tokenStream("", reader);
 	   CharTermAttribute term = (CharTermAttribute) ts.getAttribute(CharTermAttribute.class);
@@ -38,9 +35,9 @@ public class test{
 		   System.out.print(term.toString()+"|");
 		   }
 	   analyzer.close();
-	   reader.close();
+	   reader.close();*/
 	   
-	   System.out.println();
+
 	   StringReader re = new StringReader(news);
 	   IKSegmenter ik = new IKSegmenter(re,true);
 	   Lexeme lex = null;
